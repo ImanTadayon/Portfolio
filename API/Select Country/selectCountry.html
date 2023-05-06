@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@400;500&display=swap">
+    <link rel="stylesheet" href="./selectCountry.css">
+    <title>نمایش مشخصات و وضعیت جوی و تعطیلات کشورها</title>
+</head>
+
+<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/44/44386.png" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<body class="bg" id="backGround">
+    <span class="material-symbols-outlined" id="on">
+        toggle_on
+    </span>
+    <span class="material-symbols-outlined" id="off">
+        toggle_off
+    </span>
+    <div class="asli">
+        <div class="container">
+            <div class="search">
+                <select name="select Country" class="select-country" id="input"></select>
+                <button class="bottom" type="button" id="search" onclick="myFunction()" keydown="Enter">جستجو</button>
+            </div>
+            <div id="result">
+                <img src="https://geology.com/world/world-map.gif" class="flag-img">
+                <h2></h2>
+                <div class="wrapper">
+                    <div class="data">
+                        <h4>Official Name: </h4><span></span>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="data">
+                        <h4>Capital: </h4><span></span>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="data">
+                        <h4>Population: </h4><span></span>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="data">
+                        <h4>Area: </h4><span></span>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="data">
+                        <h4>Currency: </h4><span></span>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="data">
+                        <h4>Languages: </h4><span></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="weather">
+            <div class="abvahava">
+            </div>
+        </div>
+    </div>
+    <div class="holiday"></div>
+
+    <script src="./selectCountry.js"></script>
+</body>
+
+</html>

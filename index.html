@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="shortcut icon" href="./Photo/iman1.jpg" type="image" />
+        
+    <!-- <link rel="stylesheet" href="./project.css"> -->
+
+    <title>Portfolio</title>
+</head>
+<div class="blure"></div>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(45 45 45);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+/* ##################### */
+
+
+
+/* TED - menu - bar*/
+.blure {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: rgba(2, 29, 56, .4);
+    backdrop-filter: blur(7px);
+    display: none;
+    position: fixed;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(236 102 80);
+    padding: 2vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.menu .ted {
+    color: blue;
+    font-size: x-large;
+    margin-left: -27px;
+}
+
+.ted:hover {
+    color: rgb(226, 226, 226);
+    transition: all 0.5s ease;
+}
+
+.menu a {
+    margin: 25px;
+    font-size: 18px;
+    color: rgb(0 0 0);
+}
+
+
+.list-menu {
+    display: flex;
+    align-items: center;
+}
+
+
+p {
+    color: white;
+    font-size: 5rem;
+
+}
+
+li {
+    color: black;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.list-menu li a {
+    color: blue;
+    border-bottom: 1px solid transparent;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.list-menu li a:hover {
+    font-weight: bold;
+
+}
+
+.list-menu-mobile-bar {
+    position: fixed;
+    top: 30px;
+    right: 35px;
+    width: 1.6rem;
+    height: 0.3rem;
+    background-color: #212121;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: 0.3s ease;
+    display: none;
+}
+
+.list-menu-mobile-bar::before {
+    content: '';
+    position: absolute;
+    top: -9px;
+    right: 0;
+    width: 2rem;
+    height: 0.3rem;
+    background-color: #212121;
+    border-radius: 2rem;
+    transition: 0.3s ease;
+}
+
+.list-menu-mobile-bar::after {
+    content: '';
+    position: absolute;
+    top: 9px;
+    right: 0;
+    width: 2rem;
+    height: 0.3rem;
+    background-color: #212121;
+    border-radius: 2rem;
+    transition: 0.3s ease;
+}
+
+.list-menu-mobile {
+    position: fixed;
+    /* top: calc(100% - 51 /2); */
+    right: 22px;
+    top: 8px;
+    background-color: rgb(255, 255, 255, 0.15);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: none;
+    justify-content: center;
+}
+
+.response-show {
+    top: 1rem;
+    right: 0;
+    background-color: #e2e2e2;
+    width: 40%;
+    border-radius: 5rem 0 0 0;
+    height: calc(100% - 1rem);
+    box-shadow: 0 3px 20px rgb(107, 107, 107, 0.17);
+}
+
+.list-menu-mobile ul {
+    margin-top: 15rem;
+    text-align: center;
+}
+
+
+
+.response-show .list-menu-mobile-bar {
+    background-color: rgb(236 102 80);
+}
+
+.response-show .list-menu-mobile-bar::before {
+    background-color: rgb(236 102 80);
+    transform: rotate(-45deg)
+}
+
+.response-show .list-menu-mobile-bar::after {
+    background-color: rgb(236 102 80);
+    transform: rotate(-45deg)
+}
+
+
+.list-menu-mobile ul {
+    margin-top: 15rem;
+    align-items: center;
+}
+
+.list-menu-mobile ul li {
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(200%) scale(5);
+}
+
+
+.response-show ul li {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+.list-menu-mobile ul li a {
+    font-size: 1.5rem;
+    color: blue
+}
+
+
+h2 {
+    font-size: 2rem;
+    color: rgb(145, 45, 45);
+    font-weight: 100
+}
+
+h3 {
+    color: rgb(207, 207, 207);
+    font-weight: lighter
+}
+
+
+
+.contact {
+    background-color: #e2e2e2;
+    border-radius: 10px;
+    z-index: 2;
+    display: none;
+    min-width: 320px;
+    position: fixed;
+
+}
+
+.better-call {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 22vh;
+}
+
+.close .x {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 12px;
+    font-size: large;
+    top: 0px;
+    left: 5px;
+    color: rgb(137, 137, 170);
+    margin: 0;
+    transition: 1s;
+}
+
+
+.close .x:hover {
+    transition: 0.5s;
+    color: blue;
+    font-size: x-large;
+}
+
+.call,
+.callme {
+    font-size: 24px;
+    padding: 10px;
+}
+
+
+.callme {
+    color: blue;
+    font-weight: bold;
+}
+
+/* ##########################    PAGE 2   ########################### */
+
+
+
+.projects {
+    text-align: center;
+    padding: 10rem 2rem;
+    background: rgb(51 51 51);
+    ;
+}
+
+.projects-section-header {
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid white;
+}
+
+
+.page2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+
+
+.project {
+    background: rgb(133, 132, 132);
+    ;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+}
+
+.code {
+    opacity: 0;
+    transition: 0.3s ease;
+    margin: 0px;
+}
+
+.project:hover .code {
+    color: #ff8400;
+    opacity: 1;
+}
+
+.project-image {
+    height: calc(100% - 6.8rem);
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    padding: 2.5rem 0.5rem;
+}
+
+
+/* ###############################        Fun test        ############################### */
+
+#test {
+    display: flex;
+    justify-content: space-between;
+    background-color: #484746;
+    margin: 0 auto 100px auto;
+    max-width: 1280px;
+}
+
+
+.test {
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.fun {
+    font-size: 1.2rem;
+    color: rgb(255 134 0);
+    margin: 32px;
+}
+
+.hint span {
+    display: flex;
+    font-size: 2rem;
+    transform: rotate(90deg);
+    color: orange
+}
+
+
+
+.joke {
+    display: flex;
+    padding: 12px;
+    border-radius: 10px;
+    background: orange;
+    margin: 40px;
+    border: solid #fcbe7a;
+}
+
+.joke:hover {
+    background-color: rgb(169 111 22);
+    transition: all 0.5s ease-in-out;
+    transition: all 0.5s cubic-bezier(0.72, 0.37, 0.33, 0.76);
+    cursor: pointer;
+    box-shadow: 0 0 2em rgb(255 255 255);
+    color: azure;
+}
+
+
+
+/* ##########################    PAGE 3   ########################### */
+
+.contact-section {
+    height: 50vh;
+    background-color: rgb(82, 82, 82);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-section .contact-section-header h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(255 134 0);
+    margin: 10px;
+}
+
+.contact-section .contact-section-header p {
+    color: rgb(255 255 255);
+    font-size: 1em;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 980px;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    text-decoration: none;
+    margin: 15px;
+    font-size: 70%;
+    color: rgb(212 212 212);
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery::after {
+    content: "";
+    width: 350px;
+}
+
+
+
+.bio p {
+    font-size: 20px;
+    width: 410px;
+    height: 330px;
+    background-color: #e2e2e2;
+    color: #212121;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: justify;
+    text-align-last: right;
+    font-family: vazir;
+    direction: rtl;
+}
+
+.bio {
+    display: none;
+    z-index: 2;
+    position: fixed;
+}
+
+
+#bioClose {
+    color: rgb(150, 154, 152);
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+}
+
+
+#bioClose:hover {
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.bio span {
+    margin: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+.material-symbols-outlined {
+    color: #484746;
+    font-size: 2rem;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+
+
+
+/* #########################     Footer      ######################### */
+
+
+#foot {
+    display: flex;
+    background: orange;
+    border-top: 4px solid red;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.footer {
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.end {
+    font-size: 1.2rem;
+    color: #212121;
+    margin: 32px;
+}
+
+/* #######################################     Media Query     ######################################### */
+
+
+
+@media (max-width: 735px) {
+    .page2 {
+        max-width: 36.2em;
+        margin: 0 auto;
+        align-content: center;
+        grid-gap: 7rem;
+    }
+
+    html {
+        font-size: 60%;
+    }
+
+    h2 {
+        font-size: 2rem
+    }
+
+    .project-title {
+        font-size: 1.7rem;
+        padding: 2rem 0.5rem;
+    }
+
+    .contact-section .contact-section-header h2 {
+        font-size: 3rem;
+    }
+
+    .contact-links a {
+        font-size: 100%;
+    }
+
+    p {
+        font-size: 7rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    .list-menu-mobile-bar {
+        display: block;
+    }
+
+    .list-menu-mobile {
+        display: flex;
+    }
+
+    .menu {
+        color: rgb(0, 0, 0);
+    }
+
+    .font-menu {
+        display: block;
+        color: white;
+    }
+
+    .list-menu-mobile-bar {
+        display: block;
+    }
+
+    .list-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 712px) {
+    .menu .list-menu {
+        display: none;
+    }
+
+    html {
+        font-size: 55%;
+    }
+}
+</style>
+<body>
+    <div class="menu">
+        <h1 class="title">IMAN <a href="#"><span class="ted">TED</span></a></h1>
+        <ul class="list-menu">
+            <li><a href="#" class="about">About</a></li>
+            <li><a href="#section2" class="samples">Work</a></li>
+            <li><a href="#contacts" class="mob">Contact</a></li>
+        </ul>
+
+        <div class="list-menu-mobile">
+            <span class="list-menu-mobile-bar"></span>
+            <ul>
+                <li><a href="#" class="aboutMe">About</a></li>
+                <li><a href="#section2" class="samples">Work</a></li>
+                <li><a href="#contacts" class="mob">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="name" id="section1">
+        <div class="contact">
+            <div class="close">
+                <a href="#" class="x">&#10006</a>
+            </div>
+            <div class="better-call" id="callNumber">
+                <a class="call">TEL : 09194684790</a>
+                <a class="callme">Better Call Me</a>
+            </div>
+        </div>
+
+        <p class="my-name">I'm TED</p>
+        <h2> i'm not devloper </h2>
+        <h3>I'm a vandal</h3>
+
+        <div class="bio">
+            <span class="material-symbols-outlined" id="bioClose">
+                disabled_by_default
+            </span>
+            <p class="bioG">توی هنرستان معماری خوندم و بعد برق صنعتی و گذروندم وارد کار فنی شدم اما همیشه دنبال یه
+                موقعیت بودم که بتونم برنامه نویسی و یاد بگیرم. در پایان دهه ۳۰ از زندگی به برنامه نویسی بیشتر از هر چیزی
+                علاقه پیدا کردم و کلی آدم باحال پیدا کردم و ازشون
+                چیزهای
+                زیادی یاد گرفتم... با خودم تصمیم گرفتم که همینطور برای پیشرفت ادامه بدم و توی راه به تمام سختی ها و
+                مشکلات غلبه کنم تازه اول راهم و کلی کار دارم و باید هر روز برای پیشرفت با قدرت حرکت کنم.</p>
+        </div>
+    </section>
+
+
+    <section class="projects" id="section2">
+        <div id="test">
+            <div class="test">
+
+
+                <p class="fun">If you feel like joking, press that button.!!! </p>
+
+                <div class="hint"><span class="material-symbols-outlined">
+                        pan_tool_alt
+                    </span></div>
+            </div>
+            <button class="joke" type="button">Do Not Press</button>
+        </div>
+        <div class="page2">
+            <a href="./clockalarm/clock.html" target="_blank" class="project project-tile">
+                <img class="project-image" src="./Photo/Clock.jpg" alt="project" />
+                <p class="project-title">
+                    <span class="code">
+                        < </span>
+                            JavaScript Alarm Clock
+                            <span class="code"> /></span>
+                </p>
+            </a>
+            </a>
+            <a href="./Ui Design/FigmaUi.html" target="_blank" class="project project-tile">
+                <img class="project-image" src="./Photo/Figma Ui.jpg" alt="project" />
+                <p class="project-title">
+                    <span class="code">
+                        < </span>
+                            App UI Design
+                            <span class="code"> /> </span>
+                </p>
+            </a>
+            <a href="./API/Select Country/selectCountry.html" target="_blank" class="project project-tile">
+                <img class="project-image" src="./Photo/APIselectCountry.png" alt="project" />
+                <p class="project-title">
+                    <span class="code">
+                        < </span>
+                            Country information
+                            <span class="code"> /> </span>
+                </p>
+            </a>
+            <a href="./Game/RockPaperScissor.html" target="_blank" class="project project-tile">
+                <img class="project-image" src="./Photo/RockPaperScissors.jpg" alt="project" />
+                <p class="project-title">
+                    <span class="code">
+                        < </span>
+                            Rock Paper Scissors Game
+                            <span class="code"> /> </span>
+                </p>
+            </a>
+        </div>
+    </section>
+
+
+    <section id="contacts" class="contact-section">
+        <div class="contact-section-header">
+            <h2>Would you like to have a coffee together?</h2>
+            <p>So Call Me ...</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/iman-tadayon-816815243/" rel="noopener" target="_blank" class="btn contact-details"><i class="fab fa-linkedin"></i> Linkedin</a>
+                <a href="https://github.com/ImanTadayon" rel="noopener" target="_blank" class="btn contact-details"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://twitter.com/imantadayon" rel="noopener" id="profile-link" target="_blank" class="btn contact-details"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="mailto:imantadayon@gmail.com" class="btn contact-details"><i class="fas fa-at"></i> Send a mail</a>
+                <a href="#" class="btn contact-details" id="callMe"><i class="fas fa-mobile-alt"></i> Call me</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer id="foot">
+        <div class="footer">
+            <p class="end">This portfolio is a tutorial project and will be updated soon... </p>
+
+            <!-- <p class="end">If you feel like joking, press that button.!!! </p> -->
+            <!-- 
+            <div class="hint"><span class="material-symbols-outlined">
+                    pan_tool_alt
+                </span></div> -->
+        </div>
+        <!-- <button class="joke" type="button">Do Not Press</button> -->
+    </footer>
+    <script>
+        const ted = document.querySelector(".ted");
+ted.addEventListener("click", () => {
+  document.getElementsByClassName("blure")[0].style.display = "block";
+  document.getElementsByClassName("contact")[0].style.display = "block";
+});
+
+const closeTed = document.querySelector(".close");
+closeTed.addEventListener("click", () => {
+  document.getElementsByClassName("blure")[0].style.display = "none";
+  document.getElementsByClassName("contact")[0].style.display = "none";
+});
+
+// Menu Mobile
+const menuResponse = document.querySelector(".list-menu-mobile");
+const menubar = document.querySelector(".list-menu-mobile-bar");
+
+menubar.addEventListener("click", () => {
+  menuResponse.classList.toggle("response-show");
+
+  const menuiItems = menuResponse.querySelectorAll("li");
+  menuiItems.forEach((item, i) => {
+    if (menuResponse.classList.contains("response-show")) {
+      i++;
+      item.style.transition = `0.4s ease 0.${i * 2}s`;
+    } else {
+      item.removeAttribute("style");
+    }
+  });
+});
+
+const callMe = document.getElementById("callMe");
+callMe.addEventListener("click", () => {
+  document.getElementsByClassName("blure")[0].style.display = "block";
+  document.getElementsByClassName("contact")[0].style.display = "block";
+});
+
+const about = document.querySelector(".about");
+about.addEventListener("click", () => {
+  document.querySelector(".blure").style.display = "block";
+  document.querySelector(".bio").style.display = "block";
+});
+
+const closeBio = document.querySelector("#bioClose");
+closeBio.addEventListener("click", () => {
+  document.querySelector(".blure").style.display = "none";
+  document.querySelector(".bio").style.display = "none";
+  document.querySelector(".list-menu-mobile").style.background = "#e2e2e2";
+});
+
+const aboutMe = document.querySelector(".aboutMe");
+aboutMe.addEventListener("click", () => {
+  document.querySelector(".blure").style.display = "block";
+  document.querySelector(".bio").style.display = "block";
+  document.querySelector(".list-menu-mobile").style.background = "#e2e2e23d";
+});
+
+// #####################################################################
+
+
+let joke = [
+  "نوشته رو نخوندی ؟",
+  "اشتباه بدی بود",
+  "دست نزن",
+  "دفعه آخرت باشه",
+  "دیگه اینکار و نکنی آ",
+  "میخوای همینجا حبست کنم",
+  "خوش اومدی",
+  "برو دیگه",
+  "حالا که فکرش و میکنم میگم حالت و بگیرم",
+  "برو برو دیگه از اینکارا نکن",
+  "یه بار دیگه کلیک کن",
+  "دیگه برو بسه",
+  "خودتی  خدافظ",
+  "بازم که اینجایی",
+  "حالت گرفته شد؟",
+  "بسه دیگه",
+  "دلم برات سوخت دیگه برو",
+  "خدافظ",
+  " بوس به کَلَت",
+  "بازم که هستی",
+  "شوخی بود به دل نگیر",
+];
+const jokeBottom = document.querySelector(".joke");
+jokeBottom.addEventListener("click", () => {
+  for (let i = 0; i < 21; i++) {
+    alert(joke[i]);
+  }
+});
+
+// #####################################################################
+
+    </script>
+</body>
+
+</html>
